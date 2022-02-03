@@ -1,0 +1,10 @@
+- hosts: smart_home
+  become: yes
+  roles:
+    - udev
+    - docker
+    - mosquitto
+    - zigbee2mqtt
+    - zwave2mqtt
+    - nodered
+    - hass

@@ -1,0 +1,1 @@
+SUBSYSTEM=="{{ item.subsystem }}", ATTRS{idVendor}=="{{ item.id_vendor }}", ATTRS{idProduct}=="{{ item.id_product }}",{% if 'serial' in item %} ATTRS{serial}=="{{ item.serial }}",{% endif %} SYMLINK+="{{ item.symlink }}", OWNER="{{ item.owner }}"

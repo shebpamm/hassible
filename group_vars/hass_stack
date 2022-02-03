@@ -1,0 +1,20 @@
+---
+
+udev:
+  rules:
+    - priority: 90
+      filename: usb-slaesh-zigbee
+      symlink: zigbee
+      owner: root
+      subsystem: tty
+      id_vendor: "10c4"
+      id_product: "ea60"
+      serial: 00_12_4B_00_23_93_3D_5D
+
+    - priority: 90
+      filename: usb-zwave
+      symlink: zwave
+      owner: root
+      subsystem: tty
+      id_vendor: "0658"
+      id_product: "0200"
