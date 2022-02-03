@@ -1,2 +1,25 @@
 ---
 
+- name: Pull mosquitto image
+  docker_compose:
+    project_src: "{{ homestack.install_source }}"
+    pull: yes
+    state: present
+    services: mosquitto
+
+- name: Ensure correct folders exist
+  file:
+    path: "{{ homestack.install_source }}/compose/{{ item }}/mosquitto"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - conf
+    - data
+    - log
+
+- name: Copy mosquitto.conf
+  template:
+    src: mosquitto.conf.j2
+    dest: "{{ homestack.install_source }}/compose/conf/mosquitto/mosquitto.conf"
