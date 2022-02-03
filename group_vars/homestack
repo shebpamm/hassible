@@ -1,0 +1,5 @@
+---
+
+homestack:
+  install_dir: /opt/docker
+  instance_name: homestack

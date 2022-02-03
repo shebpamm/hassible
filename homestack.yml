@@ -1,8 +1,8 @@
-- hosts: smart_home
+- hosts: homestack
   become: yes
   roles:
+    #    - geerlingguy.docker
     - udev
-    - docker
     - mosquitto
     - zigbee2mqtt
     - zwave2mqtt

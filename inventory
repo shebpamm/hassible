@@ -1,4 +1,4 @@
-[smart_home:children]
+[homestack:children]
 mosquitto
 zigbee2mqtt
 zwave2mqtt
@@ -6,7 +6,7 @@ nodered
 hass
 
 [docker:children]
-smart_home
+homestack
 
 [udev:children]
 zigbee2mqtt
