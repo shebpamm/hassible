@@ -1,7 +1,8 @@
 - hosts: homestack
   become: yes
   roles:
-    #    - geerlingguy.docker
+    - geerlingguy.docker
+    - geerlingguy.pip
     - udev
     - mosquitto
     - zigbee2mqtt
