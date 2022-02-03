@@ -1,5 +1,11 @@
 ---
 
+_install_dir: /opt/docker
+_instance_name: homestack
+
+
 homestack:
-  install_dir: /opt/docker
-  instance_name: homestack
+  install_dir: "{{ _install_dir }}"
+  instance_name: "{{ _instance_name }}"
+
+  install_source: "{{ _install_dir }}/{{ _instance_name }}"

@@ -4,5 +4,5 @@
   git:
     repo: "{{ homestack_repo_url }}"
     clone: yes
-    dest: "{{ homestack.install_dir }}/{{ homestack.instance_name }}"
+    dest: "{{ homestack.install_source }}"
 
