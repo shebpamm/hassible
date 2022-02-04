@@ -1,0 +1,5 @@
+mosquitto_config_dir: "{{ homestack_config.install_source }}/compose/conf/mosquitto"
+mosquitto_data_dir: "{{ homestack_config.install_source }}/compose/data/mosquitto"
+mosquitto_log_dir: "{{ homestack_config.install_source }}/compose/log/mosquitto"
+
+mosquitto_pass_base: "-c '> /config/users.passwd"

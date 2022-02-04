@@ -1,0 +1,10 @@
+---
+
+mosquitto_config:
+  allow_anonymous: no
+  users:
+    - username: tester
+      password: 123
+
+    - username: foobar
+      password: hello

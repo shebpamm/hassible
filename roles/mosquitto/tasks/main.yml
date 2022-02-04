@@ -19,7 +19,27 @@
     - data
     - log
 
-- name: Copy mosquitto.conf
+- name: Generate mosquitto.conf
   template:
     src: mosquitto.conf.j2
-    dest: "{{ homestack.install_source }}/compose/conf/mosquitto/mosquitto.conf"
+    dest: "{{ mosquitto_config_dir }}/mosquitto.conf"
+
+- name: Generate users.passwd
+  docker_container:
+    image: eclipse-mosquitto
+    name: mosquitto-password-gen
+    auto_remove: yes
+    mounts:
+      - source: "{{ mosquitto_config_dir }}"
+        target: "/config"
+        type: bind
+    user: root:root
+    entrypoint: sh
+    command: "{{ lookup('template', 'password_shell.j2') }}"
+
+- name: (re)start mosquitto container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: mosquitto
