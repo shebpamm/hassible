@@ -4,7 +4,7 @@ _install_dir: /opt/docker
 _instance_name: homestack
 
 
-homestack:
+homestack_config:
   install_dir: "{{ _install_dir }}"
   instance_name: "{{ _instance_name }}"
 

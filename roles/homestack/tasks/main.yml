@@ -1,8 +1,8 @@
 ---
 
-- name: "Clone project to {{ homestack.install_dir }}"
+- name: "Clone project to {{ homestack_config.install_dir }}"
   git:
     repo: "{{ homestack_repo_url }}"
     clone: yes
-    dest: "{{ homestack.install_source }}"
+    dest: "{{ homestack_config.install_source }}"
 

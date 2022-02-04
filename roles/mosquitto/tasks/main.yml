@@ -2,14 +2,14 @@
 
 - name: Pull mosquitto image
   docker_compose:
-    project_src: "{{ homestack.install_source }}"
+    project_src: "{{ homestack_config.install_source }}"
     pull: yes
     state: present
     services: mosquitto
 
 - name: Ensure correct folders exist
   file:
-    path: "{{ homestack.install_source }}/compose/{{ item }}/mosquitto"
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/mosquitto"
     owner: root
     group: root
     mode: 0755
