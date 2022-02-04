@@ -1,6 +1,6 @@
 ---
 
-udev:
+udev_config:
   rules:
     - priority: 90
       filename: usb-slaesh-zigbee
