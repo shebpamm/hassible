@@ -3,8 +3,8 @@
 mosquitto_config:
   allow_anonymous: no
   users:
-    - username: tester
+    tester:
       password: 123
 
-    - username: foobar
+    foobar:
       password: hello
