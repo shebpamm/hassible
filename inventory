@@ -1,7 +1,7 @@
 [homestack:children]
 mosquitto
 zigbee2mqtt
-zwave2mqtt
+zwavejs2mqtt
 nodered
 hass
 
@@ -10,7 +10,7 @@ homestack
 
 [udev:children]
 zigbee2mqtt
-zwave2mqtt
+zwavejs2mqtt
 
 [mosquitto]
 nitrogen
@@ -18,7 +18,7 @@ nitrogen
 [zigbee2mqtt]
 nitrogen
 
-[zwave2mqtt]
+[zwavejs2mqtt]
 nitrogen
 
 [nodered]

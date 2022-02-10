@@ -5,6 +5,6 @@
     - geerlingguy.pip
     - mosquitto
     - zigbee2mqtt
-    - zwave2mqtt
+    - zwavejs2mqtt
     - nodered
     - hass

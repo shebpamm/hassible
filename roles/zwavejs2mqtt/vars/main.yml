@@ -1,0 +1,3 @@
+zwavejs2mqtt_config_dir: "{{ homestack_config.install_source }}/compose/conf/zwavejs2mqtt"
+zwavejs2mqtt_data_dir: "{{ homestack_config.install_source }}/compose/data/zwavejs2mqtt"
+zwavejs2mqtt_log_dir: "{{ homestack_config.install_source }}/compose/log/zwavejs2mqtt"

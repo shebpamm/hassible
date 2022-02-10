@@ -1,0 +1,30 @@
+---
+- name: Pull zwavejs2mqtt image
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    pull: yes
+    state: present
+    services: zwavejs2mqtt
+
+- name: Ensure correct folders exist
+  file:
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/zwavejs2mqtt"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - data
+    - log
+
+- name: Generate configuration.yml
+  template:
+    src: settings.json.j2
+    dest: "{{ zwavejs2mqtt_data_dir }}/settings.json"
+
+- name: (re)start zwave2mqtt container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: zwavejs2mqtt

@@ -1,4 +1,4 @@
 - hosts: homestack
   become: yes
   roles:
-    - zwave2mqtt
+    - zwavejs2mqtt
