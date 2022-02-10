@@ -16,7 +16,7 @@
   loop:
     - data
 
-- name: Generate configuration.yml
+- name: Generate settings.json
   template:
     src: settings.json.j2
     dest: "{{ zwavejs2mqtt_data_dir }}/settings.json"

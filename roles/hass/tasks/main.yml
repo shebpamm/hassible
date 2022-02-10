@@ -1,0 +1,45 @@
+---
+
+- name: Pull home assistant image
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    pull: yes
+    state: present
+    services: homeassistant
+
+- name: Ensure correct folders exist
+  file:
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/hass"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - data
+
+- name: Generate configuration.yaml
+  template:
+    src: configuration.yml.j2
+    dest: "{{ hass_data_dir }}/configuration.yaml"
+
+- name: Generate secrets.yaml
+  template:
+    src: secrets.yml.j2
+    dest: "{{ hass_data_dir }}/secrets.yaml"
+
+- name: Ensure include files exist
+  copy:
+    content: ""
+    dest: "{{ hass_data_dir }}/{{ item }}.yaml"
+    force: no
+    owner: root
+    group: root
+    mode: 644
+  loop: "{{ hass_include_files }}"
+
+- name: (re)start home assistant container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: homeassistant

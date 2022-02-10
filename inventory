@@ -12,6 +12,12 @@ homestack
 zigbee2mqtt
 zwavejs2mqtt
 
+[duckdns]
+nitrogen
+
+[nginx_frontend]
+nitrogen
+
 [mosquitto]
 nitrogen
 

@@ -16,7 +16,7 @@
   loop:
     - data
 
-- name: Generate configuration.yml
+- name: Generate settings.js
   template:
     src: settings.js.j2
     dest: "{{ nodered_data_dir }}/settings.js"

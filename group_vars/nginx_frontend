@@ -1,0 +1,7 @@
+---
+
+nginx_enable: true
+nginx_type: opensource
+nginx_start: true
+nginx_setup: install
+

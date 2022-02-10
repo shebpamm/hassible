@@ -1,0 +1,5 @@
+---
+
+duckdns_config:
+  domain: subdomain.duckdns.org
+  token: insert-token

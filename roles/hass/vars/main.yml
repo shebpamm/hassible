@@ -1,0 +1,9 @@
+hass_config_dir: "{{ homestack_config.install_source }}/compose/conf/hass"
+hass_data_dir: "{{ homestack_config.install_source }}/compose/data/hass"
+hass_log_dir: "{{ homestack_config.install_source }}/compose/log/hass"
+
+hass_include_files:
+  - group
+  - automation
+  - script
+  - scene

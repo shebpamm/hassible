@@ -1,0 +1,41 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+
+http:
+{% if 'base_url' in hass_config %}
+  base_url: "{{ hass_config.base_url }}"
+{% endif %}
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+{% for ip_address in ansible_facts.all_ipv4_addresses %}
+    - {{ ip_address }}
+{% endfor %}
+
+mqtt:
+    broker: mosquitto
+    username: !secret mqtt_user
+    password: !secret mqtt_password
+    discovery: true
+    discovery_prefix: homeassistant
+    birth_message:
+      topic: 'hass/status'
+      payload: 'online'
+    will_message:
+      topic: 'hass/status'
+      payload: 'offline'
+
+frontend:
+
+lovelace:
+  mode: "{{ hass_config.lovelace_mode }}"
+
+{% for include_item in hass_include_files %}
+{{ include_item }}: !include {{ include_item }}.yaml
+{% endfor %}

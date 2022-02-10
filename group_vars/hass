@@ -1,0 +1,6 @@
+---
+
+hass_config:
+  lovelace_mode: storage
+  base_url: "{{ duckdns_config.domain }}"
+
