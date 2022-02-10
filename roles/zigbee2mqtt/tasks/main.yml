@@ -1,0 +1,30 @@
+---
+- name: Pull zigbee2mqtt image
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    pull: yes
+    state: present
+    services: zigbee2mqtt
+
+- name: Ensure correct folders exist
+  file:
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/zigbee2mqtt"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - data
+    - log
+
+- name: Generate configuration.yml
+  template:
+    src: configuration.yml.j2
+    dest: "{{ zigbee2mqtt_data_dir }}/configuration.yaml"
+
+- name: (re)start zigbee2mqtt container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: zigbee2mqtt

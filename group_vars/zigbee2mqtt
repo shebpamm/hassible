@@ -1,0 +1,4 @@
+---
+
+zigbee2mqtt_config:
+  frontend_enabled: true

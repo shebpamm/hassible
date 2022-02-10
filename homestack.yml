@@ -3,7 +3,6 @@
   roles:
     - geerlingguy.docker
     - geerlingguy.pip
-    - udev
     - mosquitto
     - zigbee2mqtt
     - zwave2mqtt

@@ -3,8 +3,5 @@
 mosquitto_config:
   allow_anonymous: no
   users:
-    tester:
-      password: 123
-
-    foobar:
-      password: hello
+    zigbee_user:
+      password: changemepls 
