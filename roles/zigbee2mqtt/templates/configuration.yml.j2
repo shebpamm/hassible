@@ -8,8 +8,8 @@ permit_join: false
 mqtt:
   base_topic: zigbee2mqtt
   server: 'mqtt://mosquitto'
-  user: 'mqtt_user'
-  password: {{ mosquitto_config.users.mqtt_user.password }}
+  user: 'zigbee_user'
+  password: {{ mosquitto_config.users.zigbee_user.password }}
 
 # Serial settings
 serial:
