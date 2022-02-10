@@ -15,7 +15,6 @@
     state: directory
   loop:
     - data
-    - log
 
 - name: Generate configuration.yml
   template:
