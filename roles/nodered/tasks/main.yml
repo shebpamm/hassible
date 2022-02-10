@@ -1,0 +1,30 @@
+---
+- name: Pull node-red image
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    pull: yes
+    state: present
+    services: node-red
+
+- name: Ensure correct folders exist
+  file:
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/nodered"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - data
+    - log
+
+- name: Generate configuration.yml
+  template:
+    src: settings.js.j2
+    dest: "{{ nodered_data_dir }}/settings.js"
+
+- name: (re)start node-red container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: node-red

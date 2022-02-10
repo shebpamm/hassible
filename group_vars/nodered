@@ -1,0 +1,4 @@
+---
+
+nodered_config:
+ credential_secret: plschangeme 
