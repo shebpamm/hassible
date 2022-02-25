@@ -1,18 +1,46 @@
 ---
 
 nginx_upstream_ip: 127.0.0.1
+nginx_letsencrypt_email: erik@opcode.xyz 
 
 nginx_revproxy_sites:
-  letsencrypt_email: changethis@example.com
 
   default:
     ssl: false
     letsencrypt: false
 
-  hass.example.com:
+  hass:
     domains:
-      - hass.example.com
+      - hass.opcode.xyz
     upstreams:
       - { backend_address: "{{ nginx_upstream_ip }}", backend_port: 8123 }
     ssl: true
     letsencrypt: true
+    letsencrypt_email: "{{ nginx_letsencrypt_email }}"
+
+  nodered:
+    domains:
+      - nodered.opcode.xyz
+    upstreams:
+      - { backend_address: "{{ nginx_upstream_ip }}", backend_port: 1880 }
+    ssl: true
+    letsencrypt: true
+    letsencrypt_email: "{{ nginx_letsencrypt_email }}"
+
+  zigbee2mqtt:
+    domains:
+      - zigbee.opcode.xyz
+    upstreams:
+      - { backend_address: "{{ nginx_upstream_ip }}", backend_port: 1881 }
+    ssl: true
+    letsencrypt: true
+    letsencrypt_email: "{{ nginx_letsencrypt_email }}"
+
+  zwavejs2mqtt:
+    domains:
+      - zwave.opcode.xyz
+    upstreams:
+      - { backend_address: "{{ nginx_upstream_ip }}", backend_port: 8091 }
+    ssl: true
+    letsencrypt: true
+    letsencrypt_email: "{{ nginx_letsencrypt_email }}"
