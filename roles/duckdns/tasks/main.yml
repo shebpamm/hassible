@@ -1,0 +1,15 @@
+---
+
+- name: Pull duckdns image
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    pull: yes
+    state: present
+    services: duckdns
+
+- name: (re)start duckdns container with compose
+  docker_compose:
+    project_src: "{{ homestack_config.install_source }}"
+    state: present
+    restarted: yes
+    services: duckdns

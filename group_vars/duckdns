@@ -1,5 +1,6 @@
 ---
 
 duckdns_config:
-  domain: subdomain.duckdns.org
-  token: insert-token
+  token: 40795cc1-2a0a-48be-8799-75b0f9e9459b
+  subdomains: 
+    - opcode

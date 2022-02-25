@@ -1,10 +1,13 @@
 ---
 
 _install_dir: /opt/docker
-_instance_name: homestack
+_instance_name: homestack-debug
 
 
 homestack_config:
+  timezone: Europe/Helsinki
+
+
   install_dir: "{{ _install_dir }}"
   instance_name: "{{ _instance_name }}"
 
