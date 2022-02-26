@@ -6,11 +6,14 @@ default_config:
 # http:
 #   base_url: example.duckdns.org:8123
 
+homeassistant:
+{% if 'internal_url' in hass_config %}
+  internal_url: "{{ hass_config.internal_url }}"
+  external_url: "{{ hass_config.external_url }}"
+{% endif %}
+
 
 http:
-{% if 'base_url' in hass_config %}
-  base_url: "{{ hass_config.base_url }}"
-{% endif %}
   use_x_forwarded_for: true
   trusted_proxies:
     - 127.0.0.1

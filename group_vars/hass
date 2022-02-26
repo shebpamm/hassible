@@ -2,5 +2,6 @@
 
 hass_config:
   lovelace_mode: storage
-  base_url: "{{ nginx_revproxy_sites.hass.domains[0] }}"
+  internal_url: http://hass:8123 # Can also be set to host ip or hostname from facts, depending how you want it
+  external_url: "{{ nginx_revproxy_sites.hass.domains[0] }}"
 
