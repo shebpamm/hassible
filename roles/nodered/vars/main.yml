@@ -1,3 +1,5 @@
 nodered_config_dir: "{{ homestack_config.install_source }}/compose/conf/node-red"
 nodered_data_dir: "{{ homestack_config.install_source }}/compose/data/node-red"
 nodered_log_dir: "{{ homestack_config.install_source }}/compose/log/node-red"
+  
+nodered_pass_base: "docker run --rm -it --entrypoint /bin/sh nodered/node-red -c "

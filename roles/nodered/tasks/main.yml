@@ -16,6 +16,14 @@
   loop:
     - data
 
+- name: Hash user passwords
+  shell: "{{ lookup('template', 'password_shell.j2') }}"
+  loop: "{{ nodered_config.users }}"
+  register: nodered_hashed_passwords
+
+- debug:
+    var: nodered_hashed_passwords
+
 - name: Generate settings.js
   template:
     src: settings.js.j2

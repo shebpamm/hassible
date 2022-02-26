@@ -2,3 +2,7 @@
 
 nodered_config:
  credential_secret: plschangeme 
+ users:
+   - user: "admin"
+     password: "plschangeme"
+     permissions: "*"
