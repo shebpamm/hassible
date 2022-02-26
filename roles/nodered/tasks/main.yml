@@ -8,7 +8,7 @@
 
 - name: Ensure correct folders exist
   file:
-    path: "{{ homestack_config.install_source }}/compose/{{ item }}/nodered"
+    path: "{{ homestack_config.install_source }}/compose/{{ item }}/node-red"
     owner: root
     group: root
     mode: 0755

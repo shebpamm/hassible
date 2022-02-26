@@ -1,3 +1,3 @@
-nodered_config_dir: "{{ homestack_config.install_source }}/compose/conf/nodered"
-nodered_data_dir: "{{ homestack_config.install_source }}/compose/data/nodered"
-nodered_log_dir: "{{ homestack_config.install_source }}/compose/log/nodered"
+nodered_config_dir: "{{ homestack_config.install_source }}/compose/conf/node-red"
+nodered_data_dir: "{{ homestack_config.install_source }}/compose/data/node-red"
+nodered_log_dir: "{{ homestack_config.install_source }}/compose/log/node-red"
