@@ -4,7 +4,8 @@
   docker_compose:
     project_src: "{{ homestack_config.install_source }}"
     pull: yes
-    state: absent
+    state: present
+    stopped: yes
     services: mosquitto
 
 - name: Ensure correct folders exist
