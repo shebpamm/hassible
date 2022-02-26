@@ -3,7 +3,7 @@
   docker_compose:
     project_src: "{{ homestack_config.install_source }}"
     pull: yes
-    state: present
+    state: absent
     services: node-red
 
 - name: Ensure correct folders exist

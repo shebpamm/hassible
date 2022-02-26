@@ -3,7 +3,7 @@
   docker_compose:
     project_src: "{{ homestack_config.install_source }}"
     pull: yes
-    state: present
+    state: absent
     services: zigbee2mqtt
 
 - name: Ensure correct folders exist
