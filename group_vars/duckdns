@@ -1,6 +1,6 @@
 ---
 
 duckdns_config:
-  token: 40795cc1-2a0a-48be-8799-75b0f9e9459b
+  token: plschangeme
   subdomains: 
-    - opcode
+    - example
