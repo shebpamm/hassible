@@ -2,5 +2,5 @@
 
 hass_config:
   lovelace_mode: storage
-  base_url: "{{ duckdns_config.domain }}"
+  base_url: "{{ nginx_revproxy_sites.hass.domains[0] }}"
 
