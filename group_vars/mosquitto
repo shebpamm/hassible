@@ -8,3 +8,6 @@ mosquitto_config:
 
     hass_user:
       password: changemepls
+
+    nodered_user:
+      password: changemepls
