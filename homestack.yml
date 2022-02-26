@@ -8,3 +8,4 @@
     - zwavejs2mqtt
     - nodered
     - hass
+    - hispanico.nginx_revproxy
