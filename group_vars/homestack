@@ -1,7 +1,7 @@
 ---
 
 _install_dir: /opt/docker
-_instance_name: homestack-debug
+_instance_name: homestack
 
 
 homestack_config:
