@@ -13,23 +13,23 @@ zigbee2mqtt
 zwavejs2mqtt
 
 [duckdns]
-nitrogen
+localhost
 
 [nginx_frontend]
-nitrogen
+localhost
 
 [mosquitto]
-nitrogen
+localhost
 
 [zigbee2mqtt]
-nitrogen
+localhost
 
 [zwavejs2mqtt]
-nitrogen
+localhost
 
 [nodered]
-nitrogen
+localhost
 
 [hass]
-nitrogen
+localhost
 
