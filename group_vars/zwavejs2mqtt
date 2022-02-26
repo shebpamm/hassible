@@ -1,0 +1,7 @@
+---
+
+zwavejs2mqtt_config:
+  users:
+  - user: jdoe
+    password: changemepls
+

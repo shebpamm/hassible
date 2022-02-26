@@ -1,0 +1,8 @@
+[
+  {% for i in range(zwavejs2mqtt_config.users|length) %}
+    {
+        "username": "{{ zwavejs2mqtt_config.users[i].user }}",
+        "passwordHash": "{{ hashed_passwords.results[0].stdout }}"
+    }{{ "," if not loop.last else "" }}
+  {% endfor %}
+]

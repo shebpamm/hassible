@@ -3,7 +3,7 @@
   docker_compose:
     project_src: "{{ homestack_config.install_source }}"
     pull: yes
-    state: present
+    state: absent
     services: zwavejs2mqtt
 
 - name: Ensure correct folders exist
@@ -20,6 +20,19 @@
   template:
     src: settings.json.j2
     dest: "{{ zwavejs2mqtt_data_dir }}/settings.json"
+
+- name: Generate password hashes
+  script: "hashpw.py {{ item.password }}" 
+  args:
+    executable: "{{ ansible_facts['python']['executable'] }}"
+  loop: "{{ zwavejs2mqtt_config.users }}"
+  register: hashed_passwords
+
+- name: Generate users.json
+  template:
+    src: users.json.j2
+    dest: "{{ zwavejs2mqtt_data_dir }}/users.json"
+  
 
 - name: (re)start zwave2mqtt container with compose
   docker_compose:
