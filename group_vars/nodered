@@ -3,6 +3,6 @@
 nodered_config:
  credential_secret: plschangeme 
  users:
-   - user: "admin"
-     password: "plschangeme"
+   - user: admin
+     password: changemepls
      permissions: "*"
