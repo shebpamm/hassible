@@ -67,8 +67,8 @@ If you plan to use the zigbee2mqtt or zwavejs2mqtt roles, make sure you own the 
 <summary>Optional: set up Duck DNS</summary>
   <ul>
     <li>Log in to <a href="https://www.duckdns.org/">duckdns</a></li>
-    <li>Create subdomain(s) and add them to `group_vars/duckdns`</li>
-    <li>Copy token to `group_vars/duckdns`</li>
+    <li>Create subdomain(s) and add them to group_vars/duckdns</li>
+    <li>Copy token to group_vars/duckdns</li>
   </ul>
 </details>
 
