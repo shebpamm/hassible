@@ -1,6 +1,6 @@
 ---
 
 duckdns_config:
-  token: plschangeme
+  token: changemepls
   subdomains: 
     - example
